@@ -1,0 +1,299 @@
+/* =========================================================
+   Portfolio — paleta de tierras y verdes claros
+   ========================================================= */
+
+:root{
+  --sand:      #EDE7D9;   /* fondo base, pergamino */
+  --sand-2:    #F7F4EA;   /* tarjetas / paneles */
+  --ink:       #2B2A1F;   /* texto principal, negro oliva */
+  --ink-soft:  #5B5748;   /* texto secundario */
+  --clay:      #A9623E;   /* tierra / terracota — Marketing */
+  --umber:     #6B4A30;   /* tierra oscura — Branding */
+  --sage:      #7C8B6F;   /* verde grisáceo — Web */
+  --ocre:      #C79D6E;   /* arena/ocre — Ilustración */
+  --forest:    #4F5D3A;   /* verde bosque — Comics */
+  --earth:     #8A6A4F;   /* tierra media — Concept Art */
+  --leaf:      #9CAE87;   /* verde claro — Personaje */
+  --bark:      #59422E;   /* marrón oscuro — Motion */
+  --line:      rgba(43,42,31,0.14);
+  --shadow:    0 10px 30px rgba(43,42,31,0.10);
+  --radius:    2px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  background:var(--sand);
+  color:var(--ink);
+  font-family:'Work Sans', sans-serif;
+  font-size:16px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  margin:0;
+}
+
+em{ font-style:italic; color:var(--clay); }
+
+a{ color:inherit; text-decoration:none; }
+
+img{ max-width:100%; display:block; }
+
+/* subtle grain overlay for warmth */
+.grain{
+  position:fixed; inset:0; pointer-events:none; z-index:999;
+  opacity:0.035; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* =========== TOPBAR / NAV =========== */
+.topbar{
+  position:sticky; top:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 32px;
+  background:rgba(237,231,217,0.88);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+
+.logo{
+  font-family:'Fraunces', serif;
+  font-size:1.25rem;
+  font-weight:600;
+  letter-spacing:0.02em;
+}
+.logo-dot{ color:var(--clay); }
+
+.nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:22px;
+  font-family:'Space Mono', monospace;
+  font-size:0.72rem;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+}
+.nav a{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:4px 0;
+  color:var(--ink-soft);
+  border-bottom:1px solid transparent;
+  transition:color .2s ease, border-color .2s ease;
+}
+.nav a:hover{ color:var(--ink); border-color:var(--ink); }
+.nav .tag{
+  width:7px; height:7px; border-radius:50%;
+  background:var(--c, var(--clay));
+  display:inline-block;
+}
+
+.nav-toggle{
+  display:none;
+  background:none; border:none; font-size:1.3rem; cursor:pointer;
+  color:var(--ink);
+}
+
+/* =========== HERO =========== */
+.hero{
+  padding:min(14vw,120px) 32px 80px;
+  max-width:920px;
+}
+.eyebrow{
+  font-family:'Space Mono', monospace;
+  font-size:0.78rem;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  color:var(--forest);
+  margin:0 0 22px;
+}
+.hero h1{
+  font-size:clamp(2.4rem, 6vw, 4.4rem);
+  line-height:1.05;
+}
+.hero-sub{
+  max-width:520px;
+  margin:26px 0 0;
+  color:var(--ink-soft);
+  font-size:1.05rem;
+}
+.hero-swatches{
+  display:flex; gap:10px; margin-top:44px;
+}
+.hero-swatches span{
+  width:34px; height:34px; border-radius:50%;
+  background:var(--c);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);
+}
+
+/* =========== CATEGORY SECTIONS =========== */
+.cat{
+  padding:64px 32px 96px;
+  border-top:1px solid var(--line);
+  scroll-margin-top:80px;
+}
+
+.cat-head{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  column-gap:24px;
+  row-gap:6px;
+  max-width:1200px;
+  margin:0 auto 40px;
+  align-items:baseline;
+}
+.cat-code{
+  font-family:'Space Mono', monospace;
+  font-size:0.85rem;
+  color:var(--accent, var(--clay));
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+  transform:rotate(180deg);
+  align-self:start;
+  padding-top:6px;
+}
+.cat-head h2{
+  font-size:clamp(1.8rem, 3.4vw, 2.6rem);
+  grid-column:2;
+}
+.cat-head p{
+  grid-column:2;
+  margin:0;
+  color:var(--ink-soft);
+  max-width:560px;
+}
+.cat-head::before{
+  content:"";
+  grid-row:1 / span 2;
+  width:4px;
+  background:var(--accent, var(--clay));
+  border-radius:2px;
+}
+
+/* image grid, masonry-ish via row-span utility classes */
+.grid{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  grid-auto-rows:10px;
+  gap:20px;
+}
+.grid-square{ grid-template-columns:repeat(4, 1fr); }
+
+.card{
+  position:relative;
+  margin:0;
+  overflow:hidden;
+  border-radius:var(--radius);
+  background:var(--sand-2);
+  box-shadow:var(--shadow);
+  grid-column:span 2;
+  grid-row:span 56;
+}
+.card.wide{ grid-column:span 4; grid-row:span 42; }
+.card.tall{ grid-row:span 74; }
+.grid-square .card{ grid-column:span 2; grid-row:span 46; }
+
+.card img{
+  width:100%; height:100%; object-fit:cover;
+  transition:transform .5s ease;
+}
+.card:hover img{ transform:scale(1.04); }
+
+.card figcaption{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:16px 18px 14px;
+  background:linear-gradient(to top, rgba(20,18,10,0.72), rgba(20,18,10,0));
+  color:#F7F4EA;
+  transform:translateY(60%);
+  opacity:0;
+  transition:transform .25s ease, opacity .25s ease;
+}
+.card:hover figcaption{ transform:translateY(0); opacity:1; }
+.card figcaption span{
+  display:block; font-size:0.9rem; font-weight:500;
+}
+.card figcaption small{
+  display:block; margin-top:2px;
+  font-family:'Space Mono', monospace;
+  font-size:0.68rem;
+  opacity:0.8;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+}
+
+/* reveal on scroll */
+.card{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+.card.in-view{ opacity:1; transform:translateY(0); }
+
+/* =========== ABOUT =========== */
+.about{
+  padding:96px 32px 120px;
+  border-top:1px solid var(--line);
+  background:var(--sand-2);
+}
+.about-inner{
+  max-width:640px; margin:0 auto;
+}
+.about .cat-code{
+  writing-mode:horizontal-tb; transform:none;
+  color:var(--forest);
+  display:block; margin-bottom:10px;
+}
+.about h2{ font-size:clamp(1.8rem,3.4vw,2.4rem); margin-bottom:20px; }
+.about p{ color:var(--ink-soft); }
+.about-hobbies{ font-style:italic; }
+.cv-link{
+  display:inline-block; margin-top:24px;
+  font-family:'Space Mono', monospace;
+  font-size:0.85rem;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:2px;
+}
+
+/* =========== FOOTER =========== */
+.site-footer{
+  padding:40px 32px;
+  display:flex; flex-wrap:wrap; gap:20px;
+  align-items:center; justify-content:space-between;
+  border-top:1px solid var(--line);
+}
+.footer-name{ font-family:'Fraunces', serif; margin:0; font-size:1.1rem; }
+.footer-mail{ margin:2px 0 0; color:var(--ink-soft); font-size:0.9rem; }
+.footer-links{ display:flex; gap:18px; font-size:0.85rem; }
+.footer-links a{ color:var(--ink-soft); border-bottom:1px solid transparent; }
+.footer-links a:hover{ color:var(--ink); border-color:var(--ink); }
+
+/* =========== RESPONSIVE =========== */
+@media (max-width:860px){
+  .nav{
+    display:none;
+    position:absolute; top:100%; left:0; right:0;
+    flex-direction:column; gap:0;
+    background:var(--sand);
+    border-bottom:1px solid var(--line);
+    padding:8px 32px 18px;
+  }
+  .nav.open{ display:flex; }
+  .nav a{ padding:10px 0; border-bottom:1px solid var(--line); }
+  .nav-toggle{ display:block; }
+
+  .grid, .grid-square{ grid-template-columns:repeat(2,1fr); }
+  .card{ grid-column:span 2 !important; grid-row:span 50 !important; }
+  .card.wide{ grid-row:span 40 !important; }
+
+  .cat-head{ grid-template-columns:22px 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  .card, .card img, .card figcaption{ transition:none; }
+}
