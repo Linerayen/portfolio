@@ -78,8 +78,8 @@ function initGradientCanvas(canvasId, palette, blobCount) {
   });
 }
 
-// Paleta tierras + verdes claros para las gradientes generadas por código
-initGradientCanvas('heroCanvas', ['#EDE7D9', '#C79D6E', '#9CAE87', '#A9623E', '#7C8B6F'], 5);
+// Paleta "Lino" (oscuro + verde lima) para el hero — verdes claros para Proyectos
+initGradientCanvas('heroCanvas', ['#10160F', '#12362B', '#1E4A34', '#A6D64A', '#0E1A13'], 5);
 initGradientCanvas('proyCanvas', ['#F1EEE0', '#9CAE87', '#C79D6E', '#7C8B6F'], 4);
 
 // =====================================================
