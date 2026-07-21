@@ -17,6 +17,7 @@
 <header class="topbar">
   <a href="#top" class="logo">N·A<span class="logo-dot">.</span></a>
   <nav class="nav" id="nav">
+    <a href="#proyectos"><span class="tag" style="--c:#5B6B4A"></span>Proyectos</a>
     <a href="#marketing"><span class="tag" style="--c:#A9623E"></span>Marketing</a>
     <a href="#branding"><span class="tag" style="--c:#6B4A30"></span>Branding</a>
     <a href="#web"><span class="tag" style="--c:#7C8B6F"></span>Web</a>
@@ -34,6 +35,8 @@
 
   <!-- HERO -->
   <section class="hero">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="grain-overlay" aria-hidden="true"></div>
     <p class="eyebrow">Diseño gráfico &amp; dirección de arte — Santiago, Chile</p>
     <h1>Hago que las <em>ideas</em><br> tomen forma y color.</h1>
     <p class="hero-sub">
@@ -48,6 +51,132 @@
       <span style="--c:#6B4A30"></span>
       <span style="--c:#7C8B6F"></span>
     </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section class="proyectos" id="proyectos">
+    <canvas class="proy-canvas" id="proyCanvas" aria-hidden="true"></canvas>
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <div class="proy-head">
+      <span class="cat-code">00</span>
+      <h2>Proyectos</h2>
+      <p>Una selección cruzada de trabajos — filtra por categoría para explorar.</p>
+    </div>
+
+    <div class="filters" id="filters" role="tablist" aria-label="Filtrar proyectos por categoría">
+      <button class="filter-pill is-active" data-filter="all">Todos</button>
+      <button class="filter-pill" data-filter="marketing" style="--c:#A9623E">Marketing</button>
+      <button class="filter-pill" data-filter="branding" style="--c:#6B4A30">Branding</button>
+      <button class="filter-pill" data-filter="web" style="--c:#7C8B6F">Web</button>
+      <button class="filter-pill" data-filter="ilustracion" style="--c:#C79D6E">Ilustración</button>
+      <button class="filter-pill" data-filter="comics" style="--c:#4F5D3A">Comics</button>
+      <button class="filter-pill" data-filter="concept-art" style="--c:#8A6A4F">Concept Art</button>
+      <button class="filter-pill" data-filter="personaje" style="--c:#9CAE87">Personaje</button>
+      <button class="filter-pill" data-filter="motion" style="--c:#59422E">Motion</button>
+    </div>
+
+    <div class="proy-grid" id="proyGrid">
+
+      <article class="proy-card" data-tags="branding ilustracion">
+        <div class="proy-media"><img src="https://picsum.photos/seed/proy-01/900/700" alt="Placeholder proyecto 1" loading="lazy"></div>
+        <div class="proy-body">
+          <h3>Nombre del proyecto</h3>
+          <p>Cliente — breve descripción de una línea sobre el encargo.</p>
+          <div class="proy-tags">
+            <span style="--c:#6B4A30">Branding</span>
+            <span style="--c:#C79D6E">Ilustración</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proy-card" data-tags="web marketing">
+        <div class="proy-media"><img src="https://picsum.photos/seed/proy-02/900/700" alt="Placeholder proyecto 2" loading="lazy"></div>
+        <div class="proy-body">
+          <h3>Nombre del proyecto</h3>
+          <p>Cliente — breve descripción de una línea sobre el encargo.</p>
+          <div class="proy-tags">
+            <span style="--c:#7C8B6F">Web</span>
+            <span style="--c:#A9623E">Marketing</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proy-card" data-tags="comics ilustracion">
+        <div class="proy-media"><img src="https://picsum.photos/seed/proy-03/900/700" alt="Placeholder proyecto 3" loading="lazy"></div>
+        <div class="proy-body">
+          <h3>Nombre del proyecto</h3>
+          <p>Cliente — breve descripción de una línea sobre el encargo.</p>
+          <div class="proy-tags">
+            <span style="--c:#4F5D3A">Comics</span>
+            <span style="--c:#C79D6E">Ilustración</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proy-card" data-tags="concept-art personaje">
+        <div class="proy-media"><img src="https://picsum.photos/seed/proy-04/900/700" alt="Placeholder proyecto 4" loading="lazy"></div>
+        <div class="proy-body">
+          <h3>Nombre del proyecto</h3>
+          <p>Cliente — breve descripción de una línea sobre el encargo.</p>
+          <div class="proy-tags">
+            <span style="--c:#8A6A4F">Concept Art</span>
+            <span style="--c:#9CAE87">Personaje</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proy-card" data-tags="branding marketing">
+        <div class="proy-media"><img src="https://picsum.photos/seed/proy-05/900/700" alt="Placeholder proyecto 5" loading="lazy"></div>
+        <div class="proy-body">
+          <h3>Nombre del proyecto</h3>
+          <p>Cliente — breve descripción de una línea sobre el encargo.</p>
+          <div class="proy-tags">
+            <span style="--c:#6B4A30">Branding</span>
+            <span style="--c:#A9623E">Marketing</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proy-card" data-tags="motion personaje">
+        <div class="proy-media"><img src="https://picsum.photos/seed/proy-06/900/700" alt="Placeholder proyecto 6" loading="lazy"></div>
+        <div class="proy-body">
+          <h3>Nombre del proyecto</h3>
+          <p>Cliente — breve descripción de una línea sobre el encargo.</p>
+          <div class="proy-tags">
+            <span style="--c:#59422E">Motion</span>
+            <span style="--c:#9CAE87">Personaje</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proy-card" data-tags="web ilustracion">
+        <div class="proy-media"><img src="https://picsum.photos/seed/proy-07/900/700" alt="Placeholder proyecto 7" loading="lazy"></div>
+        <div class="proy-body">
+          <h3>Nombre del proyecto</h3>
+          <p>Cliente — breve descripción de una línea sobre el encargo.</p>
+          <div class="proy-tags">
+            <span style="--c:#7C8B6F">Web</span>
+            <span style="--c:#C79D6E">Ilustración</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proy-card" data-tags="concept-art comics">
+        <div class="proy-media"><img src="https://picsum.photos/seed/proy-08/900/700" alt="Placeholder proyecto 8" loading="lazy"></div>
+        <div class="proy-body">
+          <h3>Nombre del proyecto</h3>
+          <p>Cliente — breve descripción de una línea sobre el encargo.</p>
+          <div class="proy-tags">
+            <span style="--c:#8A6A4F">Concept Art</span>
+            <span style="--c:#4F5D3A">Comics</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="proy-empty" id="proyEmpty" hidden>No hay proyectos con esta etiqueta todavía — reemplaza este grid con tus propios trabajos.</p>
   </section>
 
   <!-- MARKETING -->
